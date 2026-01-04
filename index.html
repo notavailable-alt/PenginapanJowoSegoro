@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resmi | Penginapan Jowo Segoro</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --pastel-green: #e8f5e9;
+            --mint: #a5d6a7;
+            --ocean-blue: #e1f5fe;
+            --soft-blue: #81d4fa;
+            --deep-ocean: #0277bd;
+            --accent-green: #66bb6a;
+            --warning-peach: #fff3e0;
+            --danger-red: #ff5252;
+            --text-main: #37474f;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--ocean-blue);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Fredoka', sans-serif; }
+
+        /* --- ANIMATIONS --- */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: linear-gradient(135deg, var(--mint), var(--soft-blue));
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            color: var(--deep-ocean);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        header h1 { font-size: 3rem; margin: 0; letter-spacing: 1px; }
+        header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- WARNING BANNER --- */
+        .warning-box {
+            background: var(--warning-peach);
+            border: 3px dashed var(--danger-red);
+            border-radius: 20px;
+            padding: 25px;
+            margin: -30px auto 40px auto;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            animation: float 4s ease-in-out infinite;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .warning-box i { color: var(--danger-red); font-size: 2rem; margin-bottom: 10px; }
+        .warning-box h3 { color: var(--danger-red); margin: 0 0 10px 0; }
+
+        /* --- SECTION STYLE --- */
+        section {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        h2 { color: var(--deep-ocean); font-size: 2rem; display: flex; align-items: center; gap: 15px; }
+        h2 i { color: var(--accent-green); }
+
+        /* --- BUTTON --- */
+        .cta-container { text-align: center; padding: 20px 0; }
+        .btn-whatsapp {
+            background: var(--accent-green);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(102, 187, 106, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05) rotate(-1deg);
+            background: #55a659;
+        }
+
+        /* --- GALLERY --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-card {
+            background: var(--ocean-blue);
+            border-radius: 20px;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .gallery-card:hover { transform: translateY(-10px); background: var(--mint); }
+
+        .gallery-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .gallery-card p { text-align: center; font-weight: 600; color: var(--deep-ocean); margin: 10px 0; }
+
+        /* --- MAP & CONTACT --- */
+        .map-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 5px solid var(--ocean-blue);
+            height: 350px;
+            margin-top: 20px;
+        }
+
+        .map-disclaimer {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            line-height: 1.4;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .contact-list { list-style: none; padding: 0; font-size: 1.1rem; }
+        .contact-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
+        .contact-list i { color: var(--deep-ocean); width: 25px; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--mint);
+            color: var(--deep-ocean);
+            font-weight: 500;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            section { padding: 25px; }
+            .warning-box { margin-top: -20px; padding: 15px; width: 95%; }
+            .btn-whatsapp { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Jowo Segoro</h1>
+        <p><i class="fa-solid fa-umbrella-beach"></i> Penginapan Pastel & Nyaman di Gunungkidul</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="warning-box">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <h3>INFO PENTING</h3>
+        <p>Kami <strong>TIDAK</strong> bekerja sama dengan OYO, Traveloka, atau aplikasi manapun.</p>
+        <p>Abaikan pembayaran di luar lokasi. Kami hanya melayani <strong>Bayar di Tempat (Cash)</strong>.</p>
+    </div>
+
+    <section>
+        <h2><i class="fa-solid fa-paper-plane"></i> Pesan Kamar</h2>
+        <p>Ingin suasana liburan yang tenang? Yuk, tanya-tanya atau pesan langsung lewat WhatsApp kami di bawah ini:</p>
+        <div class="cta-container">
+            <a href="https://wa.me/6283150709063" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Resmi
+            </a>
+        </div>
+        <p style="text-align: center; font-size: 0.9rem; color: #777;">*Fast Respon: 08:00 - 21:00 WIB</p>
+    </section>
+
+    <section>
+        <h2><i class="fa-solid fa-camera-retro"></i> Intip Suasana Kami</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="depan.jpg" alt="Depan">
+                <p>Tampak Depan</p>
+            </div>
+            <div class="gallery-card">
+                <img src="kamar1.jpg" alt="Kamar 1">
+                <p>Kamar Utama</p>
+            </div>
+            <div class="gallery-card">
+                <img src="kamar2.jpg" alt="Kamar 2">
+                <p>Kamar Standar</p>
+            </div>
+            <div class="gallery-card">
+                <img src="fasilitas.jpg" alt="Fasilitas">
+                <p>Fasilitas & Santai</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fa-solid fa-map-location-dot"></i> Lokasi & Kontak</h2>
+        <ul class="contact-list">
+            <li><i class="fa-solid fa-location-dot"></i> Tanjungsari, Gunungkidul, Yogyakarta</li>
+            <li><i class="fa-solid fa-phone"></i> 0831-5070-9063 (WhatsApp/Call)</li>
+            <li><i class="fa-solid fa-wallet"></i> Pembayaran: Tunai di Lokasi</li>
+        </ul>
+        <div class="map-wrapper">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.2783854589233!2d110.5516084!3d-8.1238466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMDcnMjUuOSJTIDExMMKwMzMnMDUuOCJF!5e0!3m2!1sid!2sid!4v1704380000000!5m2!1sid!2sid" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="map-disclaimer">
+            <i class="fa-solid fa-circle-info" style="color: var(--deep-ocean); margin-top: 3px;"></i>
+            <span>Titik koordinat di atas adalah lokasi fisik asli kami. Abaikan jika Anda menemukan nama bisnis serupa dengan logo pihak lain di pencarian Google, karena profil tersebut sedang dalam sengketa.</span>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>Dibuat dengan <i class="fa-solid fa-heart" style="color: #ff5252;"></i> untuk Tamu Jowo Segoro</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">© 2026 Penginapan Jowo Segoro Resmi</p>
+</footer>
+
+</body>
+</html>
