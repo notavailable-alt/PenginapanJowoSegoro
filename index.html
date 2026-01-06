@@ -412,6 +412,15 @@
             font-weight: 500;
         }
 
+        .social-link {
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--accent-green) !important;
+        }
+
         /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
@@ -597,9 +606,10 @@
     <div style="margin-bottom: 20px;">
         <h3 style="margin: 0 0 15px 0; color: var(--deep-ocean);">Ikuti Kami</h3>
         <div style="display: flex; justify-content: center; gap: 20px;">
-            <a href="https://www.instagram.com/penginapanjowosegoro" target="_blank" style="color: var(--deep-ocean); font-size: 1.5rem; transition: color 0.3s;" title="Ikuti kami di Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/penginapanjowosegoro" target="_blank" style="color: var(--deep-ocean); font-size: 1.5rem; transition: color 0.3s;" title="Ikuti kami di Facebook"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://wa.me/6283150709063" target="_blank" style="color: var(--deep-ocean); font-size: 1.5rem; transition: color 0.3s;" title="Hubungi via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=61586260102949" target="_blank" class="social-link" style="color: var(--deep-ocean); font-size: 1.5rem;" title="Ikuti kami di Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/penginapanjowosegoro" target="_blank" class="social-link" style="color: var(--deep-ocean); font-size: 1.5rem;" title="Ikuti kami di Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/jowosegoro25" target="_blank" class="social-link" style="color: var(--deep-ocean); font-size: 1.5rem;" title="Ikuti kami di Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://wa.me/6283150709063" target="_blank" class="social-link" style="color: var(--deep-ocean); font-size: 1.5rem;" title="Hubungi via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </div>
     <p>Dibuat dengan <i class="fa-solid fa-heart" style="color: #ff5252;"></i> untuk Tamu Jowo Segoro</p>
