@@ -817,8 +817,112 @@
             }
         }
 
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                border-color: transparent;
+            }
+            51%, 100% {
+                border-color: var(--accent-gold);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
         .fade-in-up {
             animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--accent-gold);
+            white-space: nowrap;
+            animation: typewriter 3s steps(40, end), blink 0.75s step-end infinite;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        .bounce-in {
+            animation: bounceIn 1s ease forwards;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .section-transition {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .section-transition.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ===== UTILITY CLASSES ===== */
@@ -860,9 +964,9 @@
     <header id="home">
         <div class="container">
             <div class="header-content fade-in-up">
-                <h1>Penginapan Jowo Segoro</h1>
-                <p class="tagline">Kehangatan Keluarga di Jantung Gunungkidul</p>
-                <div class="header-cta">
+                <h1 class="typewriter">Penginapan Jowo Segoro</h1>
+                <p class="tagline slide-in-left">Kehangatan Keluarga di Jantung Gunungkidul</p>
+                <div class="header-cta bounce-in">
                     <a href="#booking" class="btn btn-primary">
                         <i class="fas fa-calendar-check"></i> Pesan Sekarang
                     </a>
@@ -888,11 +992,11 @@
     </div>
 
     <!-- Booking Section -->
-    <section id="booking" class="container">
+    <section id="booking" class="container section-transition">
         <div class="booking-box fade-in-up">
             <div class="booking-content">
-                <h3>Pesan Kamar Anda</h3>
-                <p>Nikmati suasana liburan yang tenang dan nyaman bersama keluarga. Hubungi kami langsung untuk informasi ketersediaan kamar dan reservasi.</p>
+                <h3 class="bounce-in">Pesan Kamar Anda</h3>
+                <p class="slide-in-left">Nikmati suasana liburan yang tenang dan nyaman bersama keluarga. Hubungi kami langsung untuk informasi ketersediaan kamar dan reservasi.</p>
                 
                 <div class="booking-highlights">
                     <div class="highlight-item">
@@ -926,11 +1030,11 @@
     </section>
 
     <!-- Facilities Section -->
-    <section id="facilities">
+    <section id="facilities" class="section-transition">
         <div class="container">
             <div class="section-title">
-                <h2>Fasilitas & Layanan</h2>
-                <p>Kami menyediakan berbagai fasilitas terbaik untuk kenyamanan Anda selama menginap</p>
+                <h2 class="slide-in-left">Fasilitas & Layanan</h2>
+                <p class="slide-in-right">Kami menyediakan berbagai fasilitas terbaik untuk kenyamanan Anda selama menginap</p>
             </div>
             
             <div class="facilities-grid">
@@ -986,11 +1090,11 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" style="background: var(--neutral-light);">
+    <section id="gallery" style="background: var(--neutral-light);" class="section-transition">
         <div class="container">
             <div class="section-title">
-                <h2>Galeri Penginapan</h2>
-                <p>Jelajahi suasana nyaman dan fasilitas terbaik yang kami tawarkan</p>
+                <h2 class="slide-in-left">Galeri Penginapan</h2>
+                <p class="slide-in-right">Jelajahi suasana nyaman dan fasilitas terbaik yang kami tawarkan</p>
             </div>
             
             <div class="gallery-grid">
@@ -1126,11 +1230,11 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials section-transition">
         <div class="container">
             <div class="section-title">
-                <h2>Apa Kata Tamu Kami</h2>
-                <p>Pengalaman nyata dari para tamu yang telah menginap di Jowo Segoro</p>
+                <h2 class="slide-in-left">Apa Kata Tamu Kami</h2>
+                <p class="slide-in-right">Pengalaman nyata dari para tamu yang telah menginap di Jowo Segoro</p>
             </div>
             
             <div class="testimonial-slider fade-in-up">
@@ -1145,12 +1249,12 @@
     </section>
 
     <!-- Contact & Location Section -->
-    <section id="contact">
+    <section id="contact" class="section-transition">
         <div class="container">
             <div class="contact-section shadow-lg fade-in-up">
                 <div class="contact-grid">
                     <div class="contact-info">
-                        <h3>Lokasi & Kontak</h3>
+                        <h3 class="bounce-in">Lokasi & Kontak</h3>
                         <ul class="contact-list">
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
@@ -1162,8 +1266,22 @@
                             <li>
                                 <i class="fas fa-phone-alt"></i>
                                 <div>
-                                    <strong>Telepon/WhatsApp</strong><br>
-                                    0831-5070-9063
+                                    <strong>Admin 1</strong><br>
+                                    <a href="tel:083150709063">0831-5070-9063</a> | <a href="https://wa.me/6283150709063" target="_blank">WhatsApp</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Admin 2</strong><br>
+                                    <a href="tel:082136282789">0821-3628-2789</a> | <a href="https://wa.me/6282136282789" target="_blank">WhatsApp</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Admin 3</strong><br>
+                                    <a href="tel:081328696559">0813-2869-6559</a> | <a href="https://wa.me/6281328696559" target="_blank">WhatsApp</a>
                                 </div>
                             </li>
                             <li>
@@ -1308,16 +1426,26 @@
             });
         });
         
-        // Smooth Scrolling
+        // Smooth Scrolling with Section Transitions
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Remove active class from all sections
+                    document.querySelectorAll('section.section-transition').forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    // Add active class to target section after a short delay
+                    setTimeout(() => {
+                        targetElement.classList.add('active');
+                    }, 300);
+
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -1351,13 +1479,46 @@
             warningBox.addEventListener('click', function() {
                 this.style.animation = 'none';
                 this.style.transform = 'scale(0.98)';
-                
+
                 setTimeout(() => {
                     this.style.animation = '';
                     this.style.transform = '';
                 }, 100);
             });
         }
+
+        // Initialize section transitions on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activate visible sections on load
+            const sections = document.querySelectorAll('section.section-transition');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    section.classList.add('active');
+                }
+            });
+        });
+
+        // Handle section transitions on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section.section-transition');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8 && rect.bottom > 0) {
+                    section.classList.add('active');
+                }
+            });
+        });
+
+        // Add pulse animation to buttons on hover
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.classList.add('pulse');
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.classList.remove('pulse');
+            });
+        });
     </script>
 </body>
 </html>
